@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: red;
+    padding: 20px;
+}
+
+.navbar h1 {
+    text-align: center;
+    color: white;
+}
+
+.container {
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bookcon {
+    padding: 15px;
+    width: auto;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    margin-top: 5px;
+    margin: 30px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bookcon h2 {
+    color: rgb(199, 42, 42);
+    margin: 2px;
+}
+
+.deletebtn {
+    width: 70px;
+    padding: 3px;
+    background-color: rgb(228, 38, 38);
+    border-radius: 20px;
+    border: none;
+    color: whitesmoke;
+    margin: 2px;
+}
+
+.bookcon h4 {
+    margin: 2px;
+}
+
+.bookcon p {
+    margin: 2px;
+}
+
+.plusbtn {
+    background-color: rgb(243, 70, 70);
+    color: black;
+    border-radius: 100%;
+    padding: 25px;
+    font-size: 45px;
+    border: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+.blackpop {
+    background-color: black;
+    opacity: 0.8;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.popbox {
+    background-color: rgb(244, 55, 55);
+    width: 40%;
+    padding: 40px;
+    border-radius: 20px;
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    z-index: 2;
+    display: none;
+}
+
+.popbox input, .popbox textarea {
+    background: transparent;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    color: white;
+}
+
+.popbox textarea {
+    border: 2px solid black;
+}
+
+#add, #cancel {
+    width: 90px;
+    padding: 5px;
+    background-color: rgb(34, 2, 2);
+    border-radius: 20px;
+    border: none;
+    color: whitesmoke;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.popbox input::placeholder, .popbox textarea::placeholder {
+    color: rgb(54, 45, 45);
+}
+
+.popbox input:focus, .popbox textarea:focus {
+    outline: none;
+}
+
+.popbox h2 {
+    text-align: center;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.more {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: bold;
+    color: red;
+    background: linear-gradient(360deg, red, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wave 15s ease-in-out infinite;
+    padding: 0;
+    margin: 0;
+}

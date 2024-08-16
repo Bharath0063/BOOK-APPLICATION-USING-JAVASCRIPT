@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeavenSky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>HEAVENSKY</h1>
+    </div>
+    <h1 class="more">ADD MORE BOOKS</h1>
+    <div class="container">
+        <div class="bookcon">
+            <h2>BOOKS</h2>
+            <h4>Everyone should know this.....</h4>
+            <p>A book can change everyone life.</p>
+            <p>Add more books to develop your life</p>
+            <button class="deletebtn">Delete</button>
+        </div>
+    </div>
+    <div class="blackpop"></div>
+    <div class="popbox">
+        <h2>Add Book</h2>
+        <form>
+            <input type="text" placeholder="Book Title" id="booktitle">
+            <input type="text" placeholder="Book Author" id="bookauthor">
+            <textarea placeholder="Description...." id="bookdes"></textarea>
+            <button id="add">Add</button>
+            <button id="cancel">Cancel</button>
+        </form>
+    </div>
+    <footer>
+        <button class="plusbtn" id="addbtn">+</button>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var popbox = document.querySelector(".popbox");
+            var blackpop = document.querySelector(".blackpop");
+            var addcontent = document.getElementById("addbtn");
+            var cancelbtn = document.getElementById("cancel");
+            var addbtn = document.getElementById("add");
+            var container = document.querySelector(".container");
+            var booktitle = document.getElementById("booktitle");
+            var bookauthor = document.getElementById("bookauthor");
+            var bookdes = document.getElementById("bookdes");
+
+            addcontent.addEventListener("click", function() {
+                popbox.style.display = "block";
+                blackpop.style.display = "block";
+                container.style.display = "none";
+            });
+
+            cancelbtn.addEventListener("click", function(event) {
+                event.preventDefault();
+                popbox.style.display = "none";
+                blackpop.style.display = "none";
+                container.style.display = "block";
+            });
+
+            addbtn.addEventListener("click", function(event) {
+                event.preventDefault();
+                var div = document.createElement("div");
+                div.classList.add("bookcon");
+                div.innerHTML = `<h2>${booktitle.value}</h2>
+                <h4>${bookauthor.value}</h4>
+                <p>${bookdes.value}</p>
+                <button class="deletebtn">Delete</button>`;
+                container.append(div);
+                popbox.style.display = "none";
+                blackpop.style.display = "none";
+                container.style.display = "block";
+            });
+
+            container.addEventListener("click", function(event) {
+                if (event.target.classList.contains("deletebtn")) {
+                    event.target.parentElement.remove();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
